@@ -3,9 +3,9 @@ import Header from './Header'
 import { checkValidDataForSignIn, checkValidDataForSignUp } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateUser } from '../utils/userSlice';
+import { NETFLIX_BACKGROUND, PHOTO_URL } from '../utils/constants';
 
 const Login = () => {
 
@@ -16,8 +16,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const fullName = useRef(null);
-
-  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -49,17 +47,16 @@ const Login = () => {
         // update user
 
         updateProfile(user, {
-          displayName: user.fullName, photoURL: "https://avatars.githubusercontent.com/u/24690749?s=400&u=6bb21804eef7cedb412fcea24e8444c1b9adc68a&v=4"
+          displayName: user.fullName, photoURL: PHOTO_URL
         }).then(() => {
           // Profile updated!
           const {uid, email, displayName, photoURL} = auth.currentUser;
-        dispatch(updateUser({
-          uid,
-          email,
-          displayName,
-          photoURL
-        }));
-        navigate("/browse");
+          dispatch(updateUser({
+            uid,
+            email,
+            displayName,
+            photoURL
+          }));
         }).catch((error) => {
           // An error occurred
           // ...
@@ -73,31 +70,26 @@ const Login = () => {
       });
 
     } else {
-      console.log("reached");
       signInWithEmailAndPassword(auth, user.email, user.password).then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
 
         // update user
-        
 
-
-        navigate("/browse");
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setErrorMessage(errorCode+ '-' + errorMessage);
       })
     }
-
   }
 
   return (
     <div>
         <Header />
         <div className="absolute">
-          <img src="https://assets.nflxext.com/ffe/siteui/vlv3/69bec183-9cc8-49d4-8fc2-08228d3c91b4/web/IN-en-20250414-TRIFECTA-perspective_c8273fb1-8860-4ff5-bd1c-c2c4b44d5f2a_medium.jpg"
-            alt="Netflix Logo"
+          <img src={NETFLIX_BACKGROUND}
+            alt="Netflix background Logo"
           />  
         </div>
         <form onSubmit={(e) => e.preventDefault()} className="flex flex-col absolute w-3/12 px-12 pt-12 pb-8 bg-black my-44 left-0 right-0 mx-auto rounded-lg bg-black/80">
