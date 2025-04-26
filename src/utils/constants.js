@@ -2,4 +2,12 @@ export const NETFLIX_LOGO = "https://help.nflxext.com/helpcenter/OneTrust/oneTru
 
 export const NETFLIX_BACKGROUND = "https://assets.nflxext.com/ffe/siteui/vlv3/69bec183-9cc8-49d4-8fc2-08228d3c91b4/web/IN-en-20250414-TRIFECTA-perspective_c8273fb1-8860-4ff5-bd1c-c2c4b44d5f2a_medium.jpg";
 
-export const PHOTO_URL = "https://avatars.githubusercontent.com/u/24690749?s=400&u=6bb21804eef7cedb412fcea24e8444c1b9adc68a&v=4";
+export const PHOTO_URL = "https://occ-0-2186-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229";
+
+export const API_OPTIONS = {
+    method: 'GET',
+    headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZWQ5ZTAzN2ZiNzAxOWVkOTUxZWI0NWEwNDUxNTBkYyIsIm5iZiI6MTc0NTY0OTk0NC4wLCJzdWIiOiI2ODBjODExNzVjMDNiNDYxZGY4NTgyMjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.6NT5J6RzAzNg1UzS2uTXILMSpAVTz-xzktoI7lUa0_w'
+    }
+}
