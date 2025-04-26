@@ -43,7 +43,6 @@ const Login = () => {
 
       createUserWithEmailAndPassword(auth, user.email, user.password).then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
         // update user
 
         updateProfile(user, {
@@ -72,8 +71,7 @@ const Login = () => {
     } else {
       signInWithEmailAndPassword(auth, user.email, user.password).then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-
+       
         // update user
 
       }).catch((error) => {
