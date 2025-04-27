@@ -4,6 +4,8 @@ export const NETFLIX_BACKGROUND = "https://assets.nflxext.com/ffe/siteui/vlv3/69
 
 export const PHOTO_URL = "https://occ-0-2186-2164.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229";
 
+export const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+
 export const API_OPTIONS = {
     method: 'GET',
     headers: {
@@ -11,3 +13,9 @@ export const API_OPTIONS = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZWQ5ZTAzN2ZiNzAxOWVkOTUxZWI0NWEwNDUxNTBkYyIsIm5iZiI6MTc0NTY0OTk0NC4wLCJzdWIiOiI2ODBjODExNzVjMDNiNDYxZGY4NTgyMjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.6NT5J6RzAzNg1UzS2uTXILMSpAVTz-xzktoI7lUa0_w'
     }
 }
+
+export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "hindi", name: "Hindi" },
+    { identifier: "spanish", name: "Spanish" }
+]

@@ -29,6 +29,15 @@
 - Update store with trailer video data, and embeded the youtube video and add autoplay, mute
 - custom hook for useTrailerVideo 
 - make container look awesome using tailwind.
+- built secondary container with movies list
+- build movie list and movie card
+- tmdb image cdn url
+- tailwind css for browse page
+- created custom hooks for popular, trending, upcoming movies
+- GPT Search Page
+- GPT Search Bar
+- **Multi Language in our App
+- Integrate GPT Api's (Get OpenAI keys)
 
 
 # Features
